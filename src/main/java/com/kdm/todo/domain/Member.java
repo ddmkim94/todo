@@ -22,6 +22,9 @@ public class Member {
     @Column(name = "mem_pwp_chk")
     private String pwd_chk;
 
+    @Column(name = "mem_name")
+    private String name;
+
     @Embedded
     @Column(name = "mem_address")
     private Address address;
