@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter @Setter
@@ -24,5 +25,8 @@ public class File {
 
     @Column(name = "file_size")
     private int size;
+
+    @Column(name = "file_save_date")
+    private LocalDateTime saveDate;
 
 }

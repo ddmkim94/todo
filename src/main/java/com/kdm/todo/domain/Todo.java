@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,6 +35,12 @@ public class Todo {
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "todo_type")
     private TodoType type;
+
+    @Column(name = "todo_create_date")
+    private LocalDateTime createDate;
+
+    @Column(name = "todo_modified_date")
+    private LocalDateTime modifiedDate;
 
     @OneToMany(mappedBy = "todo"/* 주인 엔티티에 있는 todo와 연관이 있다는걸 설정 */)
     private List<File> fileList = new ArrayList<>();

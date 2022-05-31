@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter @Setter
@@ -35,5 +36,8 @@ public class Member {
 
     @Column(name = "mem_profile")
     private String profile; // 프로필 사진은 따로 관리하지않고 바로 주소를 통해서 뿌려줄 예정...
+
+    @Column(name = "mem_join_date")
+    private LocalDateTime joinDate;
 
 }
