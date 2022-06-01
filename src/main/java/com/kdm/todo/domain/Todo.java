@@ -16,7 +16,7 @@ public class Todo {
     @Column(name = "todo_id")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "mem_id")
     private Member member;
 
@@ -28,9 +28,6 @@ public class Todo {
 
     @Column(name = "todo_content")
     private String content;
-
-    @Column(name = "todo_file")
-    private String file; // 첨부파일 여기엔 파일명만 저장하고 다른 정보들은 테이블에서 따로 관리
 
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "todo_type")

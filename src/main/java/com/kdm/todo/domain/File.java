@@ -13,7 +13,7 @@ public class File {
     @EmbeddedId
     private FileId fileId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "todo_id")
     private Todo todo;
 
