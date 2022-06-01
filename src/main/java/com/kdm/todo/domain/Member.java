@@ -1,6 +1,7 @@
 package com.kdm.todo.domain;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter @Setter
+@NoArgsConstructor
 public class Member {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,4 +42,13 @@ public class Member {
     @Column(name = "mem_join_date")
     private LocalDateTime joinDate;
 
+    public Member(String email, String pwd, String pwd_chk, String name, Address address, MemberRole role, LocalDateTime joinDate) {
+        this.email = email;
+        this.pwd = pwd;
+        this.pwd_chk = pwd_chk;
+        this.name = name;
+        this.address = address;
+        this.role = role;
+        this.joinDate = joinDate;
+    }
 }
